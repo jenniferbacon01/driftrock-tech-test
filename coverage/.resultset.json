@@ -5,8 +5,8 @@
         1,
         null,
         1,
-        3,
-        null,
+        4,
+        1,
         null,
         null,
         null,
@@ -39,6 +39,10 @@
         null,
         null,
         null,
+        null,
+        null,
+        1,
+        1,
         null,
         null,
         1,
@@ -54,6 +58,10 @@
       "/Users/jenniferbacon/Documents/Coding/Makers/jobstuff/driftrock/driftrock-tech-test/lib/business_stats_calculator.rb": [
         1,
         1,
+        3,
+        null,
+        null,
+        1,
         4,
         4,
         4,
@@ -63,6 +71,19 @@
         4,
         4,
         4,
+        null,
+        null,
+        1,
+        1,
+        1,
+        3,
+        1,
+        2,
+        1,
+        1,
+        null,
+        null,
+        1,
         null,
         null
       ],
@@ -156,6 +177,8 @@
         1,
         null,
         null,
+        null,
+        null,
         null
       ],
       "/Users/jenniferbacon/Documents/Coding/Makers/jobstuff/driftrock/driftrock-tech-test/lib/user_stats_calculator.rb": [
@@ -167,11 +190,11 @@
         null,
         null,
         1,
-        1,
-        1,
-        2,
+        4,
+        4,
+        11,
         null,
-        1,
+        4,
         null,
         null,
         1,
@@ -188,6 +211,6 @@
         null
       ]
     },
-    "timestamp": 1508860403
+    "timestamp": 1508862548
   }
 }
