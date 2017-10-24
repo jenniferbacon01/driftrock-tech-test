@@ -48,4 +48,8 @@ describe BusinessStatsCalculator do
   it 'finds the highest value customer' do
     expect(business_stats_calculator.find_highest_value_user_id(users_data, purchases_data)).to eq '12DF-2324-GA2D-31RT'
   end
+
+  it 'finds a users email from their id' do
+    expect(business_stats_calculator.find_user_email('12DF-2324-GA2D-31RT', users_data)).to eq 'drift.rock@email.com'
+  end
 end

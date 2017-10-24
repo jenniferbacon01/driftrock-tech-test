@@ -28,11 +28,11 @@ class Controller
     when 'most_loyal'
       load_data
       user_id = @business_stats_calculator.find_most_loyal_user_id(@purchases_data)
-      # p @business_stats_calculator.find_user_email(user_id)
+      p @business_stats_calculator.find_user_email(user_id, @users_data)
     when 'highest_value'
       load_data
       user_id = @business_stats_calculator.find_highest_value_user_id(@users_data, @purchases_data)
-      # p @business_stats_calculator.find_user_email(user_id)
+      p @business_stats_calculator.find_user_email(user_id, @users_data)
     when 'most_sold'
       load_data
       p @business_stats_calculator.find_most_sold_item(@purchases_data)

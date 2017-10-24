@@ -27,4 +27,10 @@ class BusinessStatsCalculator
     end
     highest_value_user_id
   end
+
+  def find_user_email(user_id, users_data)
+    users_data.each do |user|
+      return user['email'] if user['id'] == user_id
+    end
+  end
 end
