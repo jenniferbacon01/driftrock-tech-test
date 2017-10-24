@@ -2,10 +2,12 @@ require 'httparty'
 
 class DataExtractor
   def retrieve_users_data
+    puts 'users data loading'
     retrieve_data('users')
   end
 
   def retrieve_purchases_data
+    puts 'purchases data loading'
     retrieve_data('purchases')
   end
 

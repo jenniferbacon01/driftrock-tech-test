@@ -4,13 +4,13 @@ class BusinessStatsCalculator
   end
 
   def find_most_sold_item(purchases_data)
-    items = purchases_data.map { |purchase| purchase[:item] }
+    items = purchases_data.map { |purchase| purchase['item'] }
     items_by_freq = items.each_with_object(Hash.new(0)) { |item, freq| freq[item] += 1 }
     items.max_by { |freq| items_by_freq[freq] }
   end
 
   def find_most_loyal_user_id(purchases_data)
-    user_ids = purchases_data.map { |purchase| purchase[:user_id] }
+    user_ids = purchases_data.map { |purchase| purchase['user_id'] }
     user_ids_by_freq = user_ids.each_with_object(Hash.new(0)) { |user_id, freq| freq[user_id] += 1 }
     user_ids.max_by { |freq| user_ids_by_freq[freq] }
   end
@@ -18,7 +18,7 @@ class BusinessStatsCalculator
   def find_highest_value_user_id(users_data, purchases_data)
     highest_total_spend = 0
     highest_value_user_id = ''
-    user_ids = users_data.map { |user| user[:id] }
+    user_ids = users_data.map { |user| user['id'] }
     user_ids.each do |user_id|
       if @user_stats_calculator.calculate_total_spend(user_id, purchases_data) > highest_total_spend
         highest_value_user_id = user_id
