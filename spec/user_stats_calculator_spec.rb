@@ -40,4 +40,8 @@ describe UserStatsCalculator do
     expect(user_stats_calculator.calculate_total_spend("12DF-2324-GA2D-31RT", purchases_data)).to eq 29.99
   end
 
+  it 'calculates a users average spend' do
+    expect(user_stats_calculator.calculate_average_spend("12DF-2324-GA2D-31RT", purchases_data)).to eq 14.995
+  end
+
 end
