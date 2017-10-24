@@ -5,7 +5,23 @@
         1,
         null,
         1,
-        2,
+        3,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         1,
         null,
@@ -23,6 +39,10 @@
         null,
         null,
         null,
+        null,
+        null,
+        1,
+        1,
         null,
         null,
         1,
@@ -33,6 +53,12 @@
       ],
       "/Users/jenniferbacon/Documents/Coding/Makers/jobstuff/driftrock/driftrock-tech-test/lib/business_stats_calculator.rb": [
         1,
+        1,
+        4,
+        4,
+        4,
+        null,
+        null,
         1,
         4,
         4,
@@ -162,6 +188,6 @@
         null
       ]
     },
-    "timestamp": 1508858914
+    "timestamp": 1508860403
   }
 }
