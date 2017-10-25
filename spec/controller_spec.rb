@@ -79,7 +79,7 @@ describe Controller do
 
   it 'finds the most loyal customer' do
     allow(business_stats_calculator).to receive(:find_most_loyal_user_id)
-      .with(purchases_data)
+      .with(purchases_data).and_return("12DF-2324-GA2D-31RT")
     expect(business_stats_calculator).to receive(:find_most_loyal_user_id)
       .with(purchases_data)
     controller.run(['most_loyal'])
@@ -87,7 +87,7 @@ describe Controller do
 
   it 'finds the most highest value customer' do
     allow(business_stats_calculator).to receive(:find_highest_value_user_id)
-      .with(users_data, purchases_data)
+      .with(users_data, purchases_data).and_return("12DF-2324-GA2D-31RT")
     expect(business_stats_calculator).to receive(:find_highest_value_user_id)
       .with(users_data, purchases_data)
     controller.run(['highest_value'])

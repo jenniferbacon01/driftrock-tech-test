@@ -38,3 +38,28 @@ Run all feature tests and unit tests (with coverage) in your command line by typ
   $ rspec
 ````
 Tests are available to view in driftrock-tech-test/spec directory.  
+To run the linter in your command line:
+````
+  $ rubocop
+````
+Comments
+-----
+My refactoring ideas that I haven't yet implemented are below...
+
+Structure:
+
+- Instead of having find_user_email and find_user_id in my Controller, these should be part of the StatsCalculators responsibilities, which would let me get rid of all the private classes at the bottom of my Controller. I really don't like these private methods as they stop my Controller being skinny!
+
+Complexity:
+
+- In BusinessStatsCalculator, find_most_sold_item and find_most_loyal_user_id are almost repeats, these can certainly use a common private method. I grouped these methods in one class because they do similar things but I haven't really reaped the benefits (yet).
+- In UserStatsCalculator, calculate_total_spend and calculate_average_spend definitely use some of the same logic, I think there is a bit of repetition that can be avoided there too.
+- In DataExtractor, retrieve_data also needs refactoring.
+- In the Controller, the run method is too long - I couldn't think how to reduce this - suggestions would be appreciated!
+- Not happy with my flog score!
+
+Testing:
+
+- The data_extractor_spec definitely needs some work! It should not actually query the api in my tests but didn't have time how to figure out how to stub this out properly.
+- I could do with some spec_helpers here too.
+- I don't want any of my puts to show when I'm running the tests but didn't have time to look at this.

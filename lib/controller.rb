@@ -3,7 +3,8 @@ require_relative 'user_stats_calculator'
 require_relative 'business_stats_calculator'
 
 class Controller
-  def initialize(data_extractor = DataExtractor.new, user_stats_calculator = UserStatsCalculator.new, business_stats_calculator = BusinessStatsCalculator.new)
+  def initialize(data_extractor = DataExtractor.new,
+    user_stats_calculator = UserStatsCalculator.new, business_stats_calculator = BusinessStatsCalculator.new)
     @data_extractor = data_extractor
     @user_stats_calculator = user_stats_calculator
     @business_stats_calculator = business_stats_calculator
