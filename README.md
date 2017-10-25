@@ -42,13 +42,14 @@ To run the linter in your command line:
 ````
   $ rubocop
 ````
-Comments
+What I Would Do With More Time
 -----
 My refactoring ideas that I haven't yet implemented are below...
 
 Structure:
 
 - Instead of having find_user_email and find_user_id in my Controller, these should be part of the StatsCalculators responsibilities, which would let me get rid of all the private classes at the bottom of my Controller. I really don't like these private methods as they stop my Controller being skinny!
+- Potentially I need to split each user instruction into a class of it's own ie CustomerTotalSpendCalculator, MostLoyalCustomerCalculator etc.
 
 Complexity:
 
