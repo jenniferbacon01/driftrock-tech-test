@@ -15,29 +15,63 @@ class Controller
   end
 
   def run(arguments)
+    load_data
     instruction = arguments[0]
     case instruction
     when 'total_spend'
-      load_data
-      user_id = @user_stats_calculator.find_user_id(arguments[1], @users_data)
-      p @user_stats_calculator.calculate_total_spend(user_id, @purchases_data)
+      calculate_total_spend(arguments[1])
     when 'average_spend'
-      load_data
-      user_id = @user_stats_calculator.find_user_id(arguments[1], @users_data)
-      p @user_stats_calculator.calculate_average_spend(user_id, @purchases_data)
+      calculate_average_spend(arguments[1])
     when 'most_loyal'
-      load_data
-      user_id = @business_stats_calculator.find_most_loyal_user_id(@purchases_data)
-      p @business_stats_calculator.find_user_email(user_id, @users_data)
+      calculate_most_loyal_customer
     when 'highest_value'
-      load_data
-      user_id = @business_stats_calculator.find_highest_value_user_id(@users_data, @purchases_data)
-      p @business_stats_calculator.find_user_email(user_id, @users_data)
+      calculate_highest_value_customer
     when 'most_sold'
-      load_data
-      p @business_stats_calculator.find_most_sold_item(@purchases_data)
+      calculate_most_sold_item
     else
       puts 'You must enter a correct argument!'
     end
+  end
+
+  def find_user_email(user_id)
+    @users_data.each do |user|
+      return user['email'] if user['id'] == user_id
+    end
+  end
+
+  def find_user_id(email)
+    @users_data.each do |user|
+      return user['id'] if user['email'] == email
+    end
+  end
+
+  private
+
+  def calculate_total_spend(user_email)
+    user_id = find_user_id(user_email)
+    puts @user_stats_calculator
+      .calculate_total_spend(user_id, @purchases_data)
+  end
+
+  def calculate_average_spend(user_email)
+    user_id = find_user_id(user_email)
+    puts @user_stats_calculator
+      .calculate_average_spend(user_id, @purchases_data)
+  end
+
+  def calculate_most_loyal_customer
+    user_id = @business_stats_calculator
+              .find_most_loyal_user_id(@purchases_data)
+    puts find_user_email(user_id)
+  end
+
+  def calculate_highest_value_customer
+    user_id = @business_stats_calculator
+              .find_highest_value_user_id(@users_data, @purchases_data)
+    puts find_user_email(user_id)
+  end
+
+  def calculate_most_sold_item
+    puts @business_stats_calculator.find_most_sold_item(@purchases_data)
   end
 end

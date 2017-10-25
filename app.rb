@@ -1,3 +1,3 @@
-require_relative 'controller'
+require_relative 'lib/controller'
 controller = Controller.new
 controller.run(ARGV)

@@ -23,7 +23,7 @@ To install all the relevant gems:
 
 How to Run
 -----
-In your command line
+In your command line from the driftrock-tech-test directory:
 ````
   $ ruby app.rb total_spend example_customer@example.com
   $ ruby app.rb average_spend example_customer@example.com
@@ -33,7 +33,7 @@ In your command line
 ````
 How to Test
 -----
-Run all feature tests and unit tests in your command line by typing:
+Run all feature tests and unit tests (with coverage) in your command line by typing:
 ````
   $ rspec
 ````
