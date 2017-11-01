@@ -70,8 +70,6 @@ describe Controller do
   end
 
   it 'calculates average_spend for a customer' do
-    allow(user_stats_calculator).to receive(:calculate_average_spend)
-      .with('12DF-2324-GA2D-31RT', purchases_data)
     expect(user_stats_calculator).to receive(:calculate_average_spend)
       .with('12DF-2324-GA2D-31RT', purchases_data)
     controller.run(['average_spend', 'drift.rock@email.com'])
